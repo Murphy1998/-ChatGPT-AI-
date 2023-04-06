@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>作文生成器</title>
+</head>
+<body>
+	<!-- 显示作文主题输入框 -->
+	<div>
+		<h2>请输入作文主题</h2>
+		<input type="text" id="title">
+		<button onclick="generate()">确认</button>
+	</div>
+
+	<!-- 显示作文生成结果 -->
+	<div>
+		<h2>作文生成结果</h2>
+		<p id="result"></p>
+	</div>
+
+	<!-- 导入 Streamlit 和 Python 代码 -->
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/streamlit@0.81.0/streamlit_app.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/streamlit-component-lib@0.1.1/streamlit_component_lib.js"></script>
+	<script>
+		function generate() {
+			// 获取作文主题输入框中的文本
+			const title = document.getElementById("title").value;
+
+			// 发送 POST 请求到 Streamlit Python 代码中的 "/api/streamlit" 路径
+			axios.post("/api/streamlit", {args: [title]}).then(function(response) {
+				// 在作文生成结果的文本框中显示作文生成结果
+				const result = document.getElementById("result");
+				result.innerHTML = response.data["result"]["data"]["text/plain"];
+			});
+		}
+	</script>
+</body>
+</html>
