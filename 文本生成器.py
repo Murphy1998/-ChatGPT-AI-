@@ -2,7 +2,7 @@ import openai
 import streamlit as st
 
 # 设置 OpenAI API 密钥
-openai.api_key = "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"
+openai.api_key = "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"
 
 # 初始化 Streamlit 页面
 st.set_page_config(page_title="作文生成器")
