@@ -14,7 +14,8 @@ https://m.okjike.com/originalPosts/63bedf6b5b351a0c1425c368?s=eyJ1IjoiNTk4YWY2YT
 生成 key 的网址，登录账号后使用 beta.openai.com
 
 将下面注释中这段内的内容替换成自己生成的 key ，然后将代码保存成后缀为.py的文件这个程序就能正常本地使用了（如何运行也可以询问 AI ）。
-# 设置 OpenAI API 密钥
+
+设置 OpenAI API 密钥
 openai.api_key = "XXXXXXXXXXXXXXXXXX"
 
 4. 如果需要部署成网页前面也有生成对应的前端代码，将html代码保存为 index.html 文件并放入 templates 文件夹内，将 py 文件与这个文件夹保持同一级然后就能上传到服务器去运行这个程序了
